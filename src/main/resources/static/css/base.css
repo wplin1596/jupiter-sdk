@@ -1,0 +1,34 @@
+.container {
+    text-align: center;
+}
+
+.title {
+    margin: 0 auto;
+}
+
+.info-table {
+    margin: 0 auto;
+    border-spacing: 10px;
+    width: 400px;
+}
+
+.info-table input[type="text"] {
+    width: 100%;
+    padding: 1px;
+    height: 30px;
+}
+
+.info-table textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.info-table td[colspan="2"] {
+    text-align: center;
+}
+
+.info-table input[type="button"], .info-table  input[type="reset"]{
+    height: 35px;
+    width: 80px;
+    border-radius: 5px;
+}

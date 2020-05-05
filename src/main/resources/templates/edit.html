@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>File Edit</title>
+    <link href="/css/base.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="/js/jquery-serializejson.min.js" type="text/javascript"></script>
+    <script src="/js/base.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>文件信息编辑</h1>
+        </div>
+        <form id="fileForm">
+            <input type="hidden" th:value="${file.id}" name="id"/>
+            <table class="info-table">
+                <tr>
+                    <td>
+                        <label for="fileName">文件名</label>
+                    </td>
+                    <td>
+                        <input id="fileName" name="fileName" type="text" th:value="${file.fileName}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fileContent">文件内容</label>
+                    </td>
+                    <td>
+                        <textarea id="fileContent" name="fileContent" th:text="${file.fileContent}"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" onclick="editFile()" value="保存">
+                        <input type="reset" value="重置">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
