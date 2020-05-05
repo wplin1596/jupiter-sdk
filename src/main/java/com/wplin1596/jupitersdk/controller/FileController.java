@@ -76,7 +76,13 @@ public class FileController {
         return "edit";
     }
 
-    @GetMapping(value = "/download")
+    @ResponseBody
+    @GetMapping("/check")
+    public CommonSimpleResponseVo check(String id) {
+        return fileService.checkEditFile(id);
+    }
+
+    @GetMapping("/download")
     public void download(String id, HttpServletResponse response) throws IOException {
         FilePo po = fileService.queryFilePoById(id);
         response.setContentType("application/x-download;charset=UTF-8");

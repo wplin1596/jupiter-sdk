@@ -4,22 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>File List</title>
+    <link href="/css/base.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="/js/base.js" type="text/javascript"></script>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <th>文件名</th>
-            <th>文件内容</th>
-            <th>操作</th>
-        </tr>
-        <tr th:each="file:${fileList}">
-            <td><a th:href="@{'/file/download?id=' + ${file.id}}" target="_blank" th:text="${file.fileName}"></a></td>
-            <td th:text="${file.fileContent}"></td>
-            <td>
-                <a th:href="@{'/file/detail?id=' + ${file.id}}">编辑</a>
-            </td>
-        </tr>
-    </table>
+    <div class="container">
+        <div class="title">
+            <h1>文件信息列表</h1>
+        </div>
+        <div class="list-add">
+            <a href="/">添加</a>
+        </div>
+        <table border="1" cellspacing="0" cellpadding="0" class="list-table">
+            <tr>
+                <th>文件名</th>
+                <th>文件内容</th>
+                <th style="width: 50px;">操作</th>
+            </tr>
+            <tr th:each="file:${fileList}">
+                <td><a th:href="@{'/file/download?id=' + ${file.id}}" target="_blank" th:text="${file.fileName}"></a></td>
+                <td th:text="${file.fileContent}"></td>
+                <td>
+                    <a th:href="|javascript:checkEdit('${file.id}')|">编辑</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

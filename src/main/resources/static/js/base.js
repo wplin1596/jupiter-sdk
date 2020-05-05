@@ -33,3 +33,22 @@ function editFile() {
         }
     });
 }
+
+function checkEdit(id) {
+    $.ajax({
+        type: "get",
+        url: "/file/check?id=" + id,
+        dataType: "json",
+        success: function (data) {
+            if (data.result) {
+                window.location.replace("/file/detail?id=" + id);
+            } else {
+                alert(data.message);
+            }
+        }
+    });
+}
+
+function onCancel() {
+    window.location.replace("/file/list");
+}

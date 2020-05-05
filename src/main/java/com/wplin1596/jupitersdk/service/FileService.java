@@ -1,6 +1,7 @@
 package com.wplin1596.jupitersdk.service;
 
 import com.wplin1596.jupitersdk.model.po.FilePo;
+import com.wplin1596.jupitersdk.model.vo.CommonSimpleResponseVo;
 import com.wplin1596.jupitersdk.model.vo.FileVo;
 
 import java.io.IOException;
@@ -23,4 +24,6 @@ public interface FileService {
     FileVo queryFileById(String id);
 
     FilePo queryFilePoById(String id);
+
+    CommonSimpleResponseVo checkEditFile(String id);
 }
